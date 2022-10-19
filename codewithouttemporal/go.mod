@@ -1,3 +1,3 @@
-module github.com/genos1998/temporalResearch/codewithouttemporal
+module greeting
 
 go 1.19
