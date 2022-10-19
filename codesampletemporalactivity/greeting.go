@@ -3,12 +3,16 @@ package greeting
 import (
 	"time"
 
+	"go.temporal.io/sdk/temporal"
 	"go.temporal.io/sdk/workflow"
 )
 
 func GreetSomeone(ctx workflow.Context, name string) (string, error) {
 	options := workflow.ActivityOptions{
 		StartToCloseTimeout: time.Second * 5,
+		RetryPolicy: &temporal.RetryPolicy{
+			MaximumAttempts: 5,
+		},
 	}
 	ctx = workflow.WithActivityOptions(ctx, options)
 
