@@ -28,6 +28,7 @@ func main() {
 	//Note if there are multiple workers present the task of ExecuteWorkflow will be picked up by different worker in the background
 	//and this worker can continue the rest of code if we have only 1 worker upon calling of Get Func this worker has to redirect itself to the task
 	// and nothing special then same serial computing....... multiple worker is where magic happens
+	// for having multiple workers no code change required just up more pods for workers to run on
 	we, err := c.ExecuteWorkflow(context.Background(), options, greeting.GreetSomeone, os.Args[1])
 	if err != nil {
 		log.Fatalln("Unable to execute workflow", err)
