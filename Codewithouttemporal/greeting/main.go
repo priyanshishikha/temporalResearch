@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	greeting "temporal101/samples/greeting"
+	greeting "github.com/genos1998/Temporal-Research/Codewithouttemporal/greeting/greeting"
 )
 
 func main() {
