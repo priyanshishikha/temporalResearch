@@ -8,6 +8,8 @@ import (
 	"go.temporal.io/sdk/worker"
 )
 
+// This piece of code is to initialize the worker which will then run our codes. Worker needs to have a stable connection to temporal cluster
+// and also has to be tagged to the task queue from where it should get the tasks
 func main() {
 	//connection to temporal clustef
 	c, err := client.Dial(client.Options{})
